@@ -1,28 +1,28 @@
 import express from 'express';
-import { fetchTasks, fetchTask, createTasks, updateTask, deleteTask } from '../controller/tasks.js';
+import { fetchNotes, createNote, fetchNote, updateNote, deleteNote } from '../controller/notes.js';
 
 
 const router = express.Router();
 
 // Fetching all the post
-// http://localhost:5000/tasks
-router.get('/', fetchTasks);
+// http://localhost:5000/notes
+router.get('/', fetchNotes);
 
 // Creating a new post
-// http://localhost:5000/tasks/add
-router.post('/add', createTasks);
+// http://localhost:5000/notes/add
+router.post('/add', createNote);
 
 // Fetching an individual post
-// http://localhost:5000/tasks/:id
-router.get('/:id', fetchTask);
+// http://localhost:5000/notes/:id
+router.get('/:id', fetchNote);
 
 // Deleting a post
-// http://localhost:5000/tasks/:id
-router.delete('/:id', deleteTask);
+// http://localhost:5000/notes/:id
+router.delete('/:id', deleteNote);
 
 // Updating an existing post
-// http://localhost:5000/tasks/update/:id
-router.patch('/update/:id', updateTask);
+// http://localhost:5000/notes/update/:id
+router.patch('/update/:id', updateNote);
 
 
 export default router;

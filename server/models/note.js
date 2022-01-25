@@ -1,18 +1,26 @@
 import mongoose from 'mongoose';
 
 // Create Task Schema
-const taskSchema = mongoose.Schema(
+const noteSchema = mongoose.Schema(
     {
-        task:{
+        title:{
           type:String,
           required:true,
-        }
+        },
+        content:{
+          type:String,
+          required:true,
+        },
+        date: {
+          type: Date,
+          required: true
+      }
     },
     {
         timestamps: true
     }
 );
 
-const Task = mongoose.model('Task', taskSchema);
+const Note = mongoose.model('Note', noteSchema);
 
-export default Task;
+export default Note;

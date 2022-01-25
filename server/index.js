@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import taskRoutes from './routes/tasks.js';
+import noteRoutes from './routes/notes.js';
 
 dotenv.config();
 const app = express();
@@ -18,4 +18,4 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
             console.log(`Server is running in the port: ${PORT}`); }))
         .catch((error) => console.log(`${error} did not connect`));
 
-app.use('/tasks', taskRoutes); //CRUD - GET, POST, PATCH, DELETE
+app.use('/notes', noteRoutes); //CRUD - GET, POST, PATCH, DELETE
