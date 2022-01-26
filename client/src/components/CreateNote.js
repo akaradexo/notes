@@ -6,6 +6,7 @@ import {FaCheck,FaArrowLeft} from 'react-icons/fa'
 
 const CreateNote = () => {
   const date = new Date();
+  const characterLimit = 350;
 
   const[note,setNote]=useState({
     title:'',
@@ -14,11 +15,13 @@ const CreateNote = () => {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setNote({
-      ...note,
-      [name]: value,
-    });
+    if(characterLimit - e.target.value.length >= 0 ){
+      const { name, value } = e.target;
+      setNote({
+        ...note,
+        [name]: value,
+      });
+    }
   };
 
 // console.log(note)
@@ -69,7 +72,7 @@ const onSubmit = (e) =>{
             placeholder="Content"
             onChange={handleChange}
             ></textarea>
-            
+            <small>{characterLimit - note.content.length}</small>
       </form>
     </div>
     );

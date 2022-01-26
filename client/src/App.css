@@ -59,6 +59,7 @@ form{
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
 }
+
 .group-btn{
   display: flex;
   justify-content: space-between;
@@ -186,7 +187,7 @@ section{
 
 /* CSS */
 .btn-add {
-  position: absolute;
+  position: fixed;
   bottom: 5%;
   right: 5%;
   appearance: none;
@@ -210,5 +211,4 @@ section{
 
 .btn-add:active {
   box-shadow: none;
-  transform: translateY(0);
-}
+  transform: translateY(0);}
