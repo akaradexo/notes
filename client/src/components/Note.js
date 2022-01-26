@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {RiDeleteBin6Line} from 'react-icons/ri';
 import {FaEdit} from 'react-icons/fa';
+import FadeIn from 'react-fade-in';
 
 const Note = (props) => {
   // console.log(props.note)
   return (
+    <FadeIn>
   <div className="note">
     <h1>{props.note.title}</h1>
     <p>{props.note.content}</p>
@@ -21,7 +23,7 @@ const Note = (props) => {
       </div>
     </div> 
     </div>
-    
+    </FadeIn>
   );
 };
 

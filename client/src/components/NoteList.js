@@ -1,9 +1,9 @@
 import React ,{useState, useEffect} from 'react';
 import axios from 'axios'
-import { GoPlus } from 'react-icons/go';
+import { IoIosAddCircle } from 'react-icons/io';
 import Note from './Note'
+import FadeIn from 'react-fade-in';
 import {Link } from 'react-router-dom';
-
 const NoteList = () => {
 const [notes , setNotes] = useState([]);
 
@@ -25,8 +25,12 @@ useEffect(()=>{
 },[])
 
   return (
-      <div className="container">
-        <div className="note-list">
+      <div className="listWrapper">
+     
+          {notes.length > 0 ?
+          <FadeIn>
+          <div className="note-list">
+      
           {notes.map((currentNote)=>{
             // console.log(currentNote)
               return(
@@ -35,12 +39,17 @@ useEffect(()=>{
                   deleteNote = {deleteNote}
                   key ={currentNote._id}
                 />
+
               )
             })}
-          </div>
+          
+          </div></FadeIn>
+           :<div className='noNote'>🗅</div> 
+          }
         <Link role="button" className='btn-add' to='/create' >
-          <GoPlus size="3.5em"/>
+          <IoIosAddCircle size="2.5em"/>
         </Link>
+       
       </div>
   );
 };

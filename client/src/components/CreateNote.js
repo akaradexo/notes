@@ -30,7 +30,7 @@ const onSubmit = (e) =>{
     content: note.content,
     date: date.toLocaleDateString()
   };
-console.log(newNote)
+// console.log(newNote)
   axios.post('http://localhost:5000/notes/add', newNote)
         .then((res) => console.log(res.data))
         .catch((error) => console.log(error));

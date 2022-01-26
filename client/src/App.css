@@ -11,9 +11,10 @@ form{
   color: #dcdcdc;
   border-radius: 1rem;
   padding: 1rem;
-  margin: 2rem 0;
+  /* margin: 2rem 0; */
   min-width: 12rem;
   min-height: 10rem;
+  width: 100%;
 }
 .note{
   display: flex;
@@ -39,8 +40,13 @@ form{
   color: white;
   font-size: 0.7rem;
 }
-.header h1{
-  color: white;
+
+.noNote{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 5rem;
 }
 .note-footer{
   display: flex;
@@ -81,6 +87,7 @@ textarea{
   resize: none;
   color: #dcdcdc ;
   background-color: transparent;
+  caret-color: #a46856;
 }
 
 textarea:focus{
@@ -116,23 +123,32 @@ textarea:focus{
 }
 
 .header{
-  
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
+.header h1{
+  color: white;
+}
 section{
   padding:  1rem;
-  max-width: 960px;
+  display: flex;
+  justify-content: center;
   min-height: 100vh;
-
 }
 .container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
   padding: 1rem 0;
- 
+  margin: 0 auto;
 }
+.listWrapper{
+  width: 100%;
 
+}
 .click-icon{
   cursor: pointer;
   color: #dcdcdc ;
@@ -142,7 +158,7 @@ section{
 }
 
 .click-icon:hover{
-  color: red;
+  color: #a46856;
 }
 
 .search{
@@ -174,18 +190,8 @@ section{
   bottom: 5%;
   right: 5%;
   appearance: none;
-  background-color: #000000;
-  border: 2px solid #1A1A1A;
-  border-radius: 4rem;
-  height: 4rem;
-  width: 4rem;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  margin: 0;
-  outline: none;
-  text-align: center;
-  text-decoration: none;
+  color: #a46856;
+  background-color: transparent;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
   user-select: none;
   -webkit-user-select: none;
